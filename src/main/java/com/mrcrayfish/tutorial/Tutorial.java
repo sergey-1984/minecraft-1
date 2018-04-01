@@ -1,5 +1,7 @@
 package com.mrcrayfish.tutorial;
 
+import com.mrcrayfish.tutorial.handlers.BlockHandler;
+import com.mrcrayfish.tutorial.handlers.EmptyBlockRightClickHandler;
 import com.mrcrayfish.tutorial.handlers.MinecartHandler;
 import com.mrcrayfish.tutorial.proxy.CommonProxy;
 
@@ -28,6 +30,8 @@ public class Tutorial {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		MinecraftForge.EVENT_BUS.register(new MinecartHandler());
+		MinecraftForge.EVENT_BUS.register(new BlockHandler());
+		MinecraftForge.EVENT_BUS.register(new EmptyBlockRightClickHandler());
 		proxy.init();
 	}	
 	
